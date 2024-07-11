@@ -16,7 +16,7 @@ const responsive = {
   getDynamicHeight: (percent) => height * (percent / 100),
   getDynamicWidth: (percent) => width * (percent / 100),
 
-  paddingLow: { padding: height * 0.012 },
+  paddingLow: { padding: height * 0.015 },
   paddingNormal: { padding: height * 0.02 },
   paddingMedium: { padding: height * 0.04 },
   paddingHigh: { padding: height * 0.07 },

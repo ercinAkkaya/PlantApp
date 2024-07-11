@@ -1,30 +1,26 @@
+// src/App.jsx
 import React from 'react';
-import { Text, View, StyleSheet, Alert } from 'react-native';
-import CustomButton from './components/Button/default_button';
+import { SafeAreaView, ScrollView } from 'react-native';
+import PremiumFeatureCard from './components/card/premium_feature_card';
+import scanPng from '../assets/png/scan.png';
 
 const App = () => {
-  const handlePress = () => {
-    Alert.alert('Butona tıklandı!');
-  };
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.welcomeText}>Welcome</Text>
-      <CustomButton title="Tıkla" onPress={handlePress}/>
-    </View>
+    <SafeAreaView>
+      <ScrollView>
+        <PremiumFeatureCard
+          imageSource={scanPng} 
+          title="Unlimited"
+          description="Plant Identify"
+        />
+        <PremiumFeatureCard
+          imageSource={scanPng} 
+          title="Faster"
+          description="Process"
+        />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  welcomeText: {
-    fontSize: 20,
-    marginBottom: 20,
-  },
-});
 
 export default App;
