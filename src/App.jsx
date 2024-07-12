@@ -1,11 +1,12 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
-import PremiumCard from './components/card/premium_card';
+import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
+import PaywallView from './view/PaywallView/view/paywall_view';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <PremiumCard />
+      <StatusBar barStyle="dark-content" />
+      <PaywallView />
     </SafeAreaView>
   );
 };
@@ -13,9 +14,7 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f2f2f2', // Arka plan rengini tercihinize göre değiştirebilirsiniz
+    backgroundColor: '#f8f8f8',
   },
 });
 

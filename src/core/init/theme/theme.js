@@ -5,7 +5,10 @@ const theme = {
       secondary: '#000000',
       onSecondary: '#25201b',
       background: '#ffffff',
-      grey: '#f0f0f0',
+      territary: '#0e2719',
+      grey: '#2e3a35',
+      greyDark: '#1c2922',
+      greyLight: '#55625b',
     },
     fonts: {
       regular: 'Arial',
@@ -32,7 +35,7 @@ const theme = {
       },
       labelMedium: {
         fontFamily: 'Arial-Bold',
-        fontWeight: 'bold',
+        fontWeight: '500',
         fontSize: 14,
         color: '#ffffff',
       },
