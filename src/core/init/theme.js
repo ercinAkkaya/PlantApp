@@ -5,8 +5,7 @@ const theme = {
       secondary: '#000000',
       onSecondary: '#25201b',
       background: '#ffffff',
-      white: '#ffffff',
-      black: '#000000',
+      grey: '#f0f0f0',
     },
     fonts: {
       regular: 'Arial',

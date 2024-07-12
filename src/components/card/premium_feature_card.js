@@ -20,8 +20,8 @@ const PremiumFeatureCard = ({ imageSource, title, description }) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: '40%',
-    height: '50%',
+    width: '45%',
+    height: '60%',
     backgroundColor: theme.colors.primary,
     borderRadius: 15,
     margin: 10,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: '30%', 
-    height: '32%', 
+    height: '35%', 
     borderRadius: 5,
     overflow: 'hidden',
     backgroundColor: '#1b2521',
