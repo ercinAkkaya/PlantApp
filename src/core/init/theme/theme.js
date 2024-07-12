@@ -38,7 +38,7 @@ const theme = {
       },
       labelLarge: {
         fontFamily: 'Arial',
-        fontWeight: '600',
+        fontWeight: '650',
         fontSize: 16,
         color: '#ffffff',
       },

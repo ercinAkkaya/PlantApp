@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, StyleSheet } from 'react-native';
-import CategoryCard from './components/card/category_card';
+import { ScrollView, StyleSheet, Alert, View } from 'react-native';
+import QuestionCard from './components/card/question_card';
 
-const API_URL = 'https://dummy-api-jtg6bessta-ey.a.run.app/getCategories';
+const API_URL = 'https://dummy-api-jtg6bessta-ey.a.run.app/getQuestions'; // Replace with your actual API endpoint
 
 const App = () => {
-  const [categories, setCategories] = useState([]);
+  const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(API_URL);
         const data = await response.json();
-        setCategories(data.data); // Assuming data is structured as { data: [...] }
+        setQuestions(data); // Assuming data is a list of questions
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -21,16 +21,16 @@ const App = () => {
     fetchData();
   }, []);
 
-  const renderCategoryCards = () => {
-    return categories.map(category => (
-      <CategoryCard key={category.id} category={category} />
-    ));
+  const handlePress = (question) => {
+    Alert.alert('Card Pressed', 'You pressed: ${question.subtitle}');
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.cardContainer}>
-        {renderCategoryCards()}
+    <ScrollView horizontal pagingEnabled contentContainerStyle={styles.container}>
+      <View style={styles.cardList}>
+        {questions.map((question, index) => (
+          <QuestionCard key={question.id} question={question} onPress={() => handlePress(question)} />
+        ))}
       </View>
     </ScrollView>
   );
@@ -38,13 +38,14 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
+    flexGrow: 1,
+    paddingVertical: 16,
+    paddingHorizontal: 8,
   },
-  cardContainer: {
+  cardList: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 
-export default App;
+export default App;

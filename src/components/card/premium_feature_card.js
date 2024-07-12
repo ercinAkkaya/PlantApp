@@ -1,8 +1,7 @@
 // PremiumFeatureCard.js
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import theme from '../../core/init/theme'; 
-import context from '../../core/extension/context';
+import theme from '../../core/init/theme/theme'; 
 
 const PremiumFeatureCard = ({ imageSource, title, description }) => {
   return (

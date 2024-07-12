@@ -2,8 +2,6 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import context from '../../core/extension/context';
 
-
-
 const CategoryCard = ({ category }) => {
   return (
     <TouchableOpacity style={styles.card}>
@@ -61,7 +59,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: 'black', // Changed text color to black
+    color: 'black',
     textAlign: 'left',
 
   },
