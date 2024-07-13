@@ -1,22 +1,21 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import OnboardingView from './view/OnboardingView/view/onboarding_view';
+import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
+import PaywallView from './view/PaywallView/view/paywall_view';
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <OnboardingView />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="dark-content" />
+      <PaywallView />
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f6faff',
+    backgroundColor: '#f2fafd',
   },
 });
 
-export default App;
+export default App;

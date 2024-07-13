@@ -1,15 +1,14 @@
-
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import theme from '../../core/init/theme/theme'; 
 import context from '../../core/extension/context';
+import theme from '../../core/init/theme/theme'; 
 
 
 const PremiumFeatureCard = ({ imageSource, title, description }) => {
   return (
     <View style={styles.card}>
       <View style={styles.imageContainer}>
-        <Image source={imageSource} style={styles.image} tintColor='white' />
+        <Image source={imageSource} style={styles.image} />
       </View>
       <View style={styles.content}>
         <Text style={styles.title}>{title}</Text>
@@ -21,11 +20,12 @@ const PremiumFeatureCard = ({ imageSource, title, description }) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: context.getDynamicWidth(50),
-    height: context.getDynamicHeight(25),
-    backgroundColor: theme.colors.primary,
+    width: context.getDynamicWidth(38),
+    height: context.getDynamicHeight(18),
+    backgroundColor: '#233029',
     borderRadius: 15,
-    margin: 10,
+    marginVertical: context.getDynamicWidth(1),
+    marginHorizontal: context.getDynamicHeight(1),
     overflow: 'hidden',
     padding: context.paddingLow.padding,
     flexDirection: 'column',
@@ -33,29 +33,27 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: context.getDynamicWidth(10), 
-    height: context.getDynamicHeight(6), 
+    height: context.getDynamicHeight(5), 
     borderRadius: 5,
     overflow: 'hidden',
-    backgroundColor: '#1b2521',
+    backgroundColor: theme.colors.greyDark,
     justifyContent: 'center', 
     alignItems: 'center', 
   },
   image: {
-    resizeMode: 'contain', 
+    height: context.getDynamicHeight(3),
+    width: context.getDynamicWidth(5) 
   },
   content: {
-    paddingTop: 20, 
+    paddingTop: context.paddingLow.padding, 
     alignItems: 'flex-start',
   },
   title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 5,
-    color: theme.colors.textTitle,
+    ...theme.textTheme.headlineLarge,
+    color: theme.colors.background
   },
   description: {
-    fontSize: 14,
-    color: theme.colors.textDescription,
+    ...theme.textTheme.labelMedium,
     opacity: 0.9,
   },
 });

@@ -4,7 +4,6 @@ import RadioButton from '../Button/radio_button';
 import context from '../../core/extension/context';
 import theme from '../../core/init/theme/theme'; 
 
-
 const SubscriptionCard = ({ title, description, price, selected, onPress }) => {
   return (
     <TouchableOpacity style={[styles.card, selected && styles.cardSelected]} onPress={onPress}>
@@ -26,11 +25,12 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: theme.colors.greyDark,
     flexDirection: 'row',
-    padding: context.paddingNormal.padding,
+    height: context.getDynamicHeight(8),
+    padding: context.paddingLow.padding,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: theme.colors.greyLight,
-    marginVertical: context.paddingLow.padding,
+    marginVertical: context.getDynamicHeight(1),
     alignItems: 'center',
     position: 'relative',
   },
@@ -40,15 +40,16 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.territary,
   },
   textContainer: {
-    marginLeft: context.paddingLow.padding,
+    marginLeft: context.getDynamicWidth(5),
     flex: 1,
   },
   title: {
-    ...theme.textTheme.headlineMedium,
+    ...theme.textTheme.labelLarge,
+    color: theme.colors.background,
   },
   description: {
-    ...theme.textTheme.labelMedium,
-    opacity: 0.7
+    ...theme.textTheme.bodyMedium,
+    color: '#b6bfba',
   },
   priceTag: {
     position: 'absolute',
@@ -61,7 +62,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   priceTagText: {
-    ...theme.textTheme.bodyMedium,
+    ...theme.textTheme.labelMedium,
+    fontWeight: 'bold',
   },
 });
 

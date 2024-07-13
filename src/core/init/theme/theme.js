@@ -10,6 +10,8 @@ const theme = {
       grey: '#2e3a35',
       greyDark: '#1c2922',
       greyLight: '#55625b',
+      secondBackground: '#121d17',
+      
     },
     fonts: {
       regular: 'Arial',
@@ -18,7 +20,7 @@ const theme = {
     textTheme: {
       bodySmall: {
         fontFamily: 'Arial',
-        fontWeight: '600',
+        fontWeight: '500',
         fontSize: 10,
         color: '#ffffff',
       },
@@ -36,13 +38,13 @@ const theme = {
       },
       labelMedium: {
         fontFamily: 'Arial-Bold',
-        fontWeight: '500',
-        fontSize: 14,
+        fontWeight: '400',
+        fontSize: 12,
         color: '#ffffff',
       },
       labelLarge: {
         fontFamily: 'Arial',
-        fontWeight: '650',
+        fontWeight: '700',
         fontSize: 16,
         color: '#ffffff',
       },
