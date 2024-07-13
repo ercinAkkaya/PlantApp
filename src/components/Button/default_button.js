@@ -1,11 +1,14 @@
-// components/Button/CustomButton.js
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import theme from '../../core/init/theme';
+import theme from '../../core/init/theme/theme';
+import context from '../../core/extension/context';
 
 const DefaultButton = ({ title, onPress }) => {
   return (
-    <TouchableOpacity style={[styles.button, { backgroundColor: theme.colors.primary }]} onPress={onPress}>
+    <TouchableOpacity 
+      style={[styles.button, { backgroundColor: theme.colors.primary }]} 
+      onPress={onPress}
+    >
       <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   );
@@ -14,14 +17,14 @@ const DefaultButton = ({ title, onPress }) => {
 const styles = StyleSheet.create({
   button: {
     width: '100%',
+    height: context.getDynamicHeight(7),
     padding: 10,
     borderRadius: 10,
     alignItems: 'center',
+    justifyContent: 'center', 
   },
   buttonText: {
-    color: theme.colors.text,
-    fontSize: 16,
-    fontWeight: 'bold',
+    ...theme.textTheme.labelLarge
   },
 });
 

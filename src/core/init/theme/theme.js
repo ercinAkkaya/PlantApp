@@ -24,8 +24,8 @@ const theme = {
       },
       bodyMedium: {
         fontFamily: 'Arial',
-        fontWeight: '500',
-        fontSize: 12,
+        fontWeight: '550',
+        fontSize: 14,
         color: '#ffffff',
       },
       titleMedium: {
@@ -48,8 +48,8 @@ const theme = {
       },
       headlineMedium: {
         fontFamily: 'Arial-Bold',
-        fontWeight: '700',
-        fontSize: 20,
+        fontWeight: '500',
+        fontSize: 22,
         color: '#ffffff',
       },
       headlineLarge: {
@@ -60,8 +60,8 @@ const theme = {
       },
       displayLarge: {
         fontFamily: 'Arial-Bold',
-        fontWeight: '700',
-        fontSize: 36,
+        fontWeight: '450',
+        fontSize: 38,
         color: '#ffffff',
       },
     },

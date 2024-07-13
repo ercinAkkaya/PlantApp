@@ -1,7 +1,9 @@
-// PremiumFeatureCard.js
+
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import theme from '../../core/init/theme/theme'; 
+import context from '../../core/extension/context';
+
 
 const PremiumFeatureCard = ({ imageSource, title, description }) => {
   return (
@@ -19,19 +21,19 @@ const PremiumFeatureCard = ({ imageSource, title, description }) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: '45%',
-    height: '60%',
+    width: context.getDynamicWidth(50),
+    height: context.getDynamicHeight(25),
     backgroundColor: theme.colors.primary,
     borderRadius: 15,
     margin: 10,
     overflow: 'hidden',
-    padding: 10,
+    padding: context.paddingLow.padding,
     flexDirection: 'column',
     justifyContent: 'space-evenly'
   },
   imageContainer: {
-    width: '30%', 
-    height: '35%', 
+    width: context.getDynamicWidth(10), 
+    height: context.getDynamicHeight(6), 
     borderRadius: 5,
     overflow: 'hidden',
     backgroundColor: '#1b2521',
