@@ -22,6 +22,8 @@ class GetStartedViewModel {
       autoHide: true,
     });
   }
+
+  //TODO: will change
   getStartedButtonOnTap() {
     Toast.show({
       type: 'info',

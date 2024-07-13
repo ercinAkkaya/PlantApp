@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import GetStartedView from './view/GetStartedView/view/get_started_view';
+import OnboardingView from './view/OnboardingView/view/onboarding_view';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <GetStartedView />
+      <OnboardingView />
     </View>
   );
 };
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff', // Arka plan rengi beyaz
+    backgroundColor: '#f6faff',
   },
 });
 
