@@ -11,7 +11,8 @@ const theme = {
       greyDark: '#1c2922',
       greyLight: '#55625b',
       secondBackground: '#121d17',
-      
+      black: "#171b0b"
+
     },
     fonts: {
       regular: 'Arial',

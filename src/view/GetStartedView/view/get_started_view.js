@@ -1,4 +1,3 @@
-// src/view/GetStartedView/view/GetStartedView.js
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import context from '../../../core/extension/context';
@@ -7,8 +6,8 @@ import DefaultButton from '../../../components/Button/default_button';
 import GetStartedViewModel from '../viewmodel/get_started_viewmodel';
 import Toast from 'react-native-toast-message';
 
-const GetStartedView = () => {
-  const viewModel = new GetStartedViewModel();
+const GetStartedView = (navigation) => {
+  const viewModel = new GetStartedViewModel(navigation.navigate);
 
   return (
     <View style={styles.container}>
@@ -38,7 +37,6 @@ const GetStartedView = () => {
           </TouchableOpacity>.
         </Text>
       </View>
-      <Toast ref={(ref) => Toast.setRef(ref)} />
     </View>
   );
 };

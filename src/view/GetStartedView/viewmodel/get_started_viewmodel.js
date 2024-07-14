@@ -1,5 +1,6 @@
 import Toast from 'react-native-toast-message';
 
+
 class GetStartedViewModel {
   termOfUseOnTap() {
     Toast.show({
@@ -23,13 +24,12 @@ class GetStartedViewModel {
     });
   }
 
-  //TODO: will change
   getStartedButtonOnTap() {
     Toast.show({
       type: 'info',
       position: 'bottom',
-      text1: 'Privacy Policy',
-      text2: 'You pressed the Privacy Policy link.',
+      text1: 'Get Started',
+      text2: 'You pressed the Get Started button.',
       visibilityTime: 3000,
       autoHide: true,
     });

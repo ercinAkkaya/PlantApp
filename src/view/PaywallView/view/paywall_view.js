@@ -1,13 +1,21 @@
 import { View, Image, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import React from 'react';
 import DefaultButton from '../../../components/Button/default_button';
 import PremiumFeatureCard from '../../../components/card/premium_feature_card';
 import SubscriptionCard from '../../../components/card/subscription_card';
 import context from '../../../core/extension/context';
 import theme from '../../../core/init/theme/theme';
+import usePaywallViewModel from '../viewmodel/paywall_viewmodel';
+import Toast from 'react-native-toast-message';
 
 const PaywallView = () => {
-  const [selectedSubscription, setSelectedSubscription] = useState('');
+  const {
+    selectedSubscription,
+    termsOnTap,
+    privacyOnTap,
+    restoreOnTap,
+    handleSubscriptionSelect,
+  } = usePaywallViewModel();
 
   return (
     <View style={styles.container}>
@@ -38,7 +46,7 @@ const PaywallView = () => {
           title={'Faster'}
         />
         <PremiumFeatureCard
-        imageSource={require('../../../../assets/png/plant-icon.png')}
+          imageSource={require('../../../../assets/png/plant-icon.png')}
           description={'Plant description'}
           title={'Describe'}
         />
@@ -48,20 +56,32 @@ const PaywallView = () => {
         description="$2.99/month, auto renewable"
         price=""
         selected={selectedSubscription === '1month'}
-        onPress={() => setSelectedSubscription('1month')}
+        onPress={() => handleSubscriptionSelect('1month')}
       />
       <SubscriptionCard
         title="1 Year"
         description="First 3 days free, then $529.99/year"
         price="Save 50%"
         selected={selectedSubscription === '1year'}
-        onPress={() => setSelectedSubscription('1year')}
+        onPress={() => handleSubscriptionSelect('1year')}
       />
       <DefaultButton title={'Try free for 3 Days'} />
       <Text style={styles.info}>After the 3-day trial period you'll be charged ₺274.99 per year unless you</Text>
       <Text style={styles.info}>cancel before the trial expires. Yearly subscription is Auto-Renewable</Text>
-      <Text style={styles.contract}>Terms • Privacy • Restore</Text>
-    
+      
+      <View style={styles.contractContainer}>
+        <TouchableOpacity onPress={termsOnTap}>
+          <Text style={styles.contract}>Terms</Text>
+        </TouchableOpacity>
+        <Text style={styles.contract}> • </Text>
+        <TouchableOpacity onPress={privacyOnTap}>
+          <Text style={styles.contract}>Privacy</Text>
+        </TouchableOpacity>
+        <Text style={styles.contract}> • </Text>
+        <TouchableOpacity onPress={restoreOnTap}>
+          <Text style={styles.contract}>Restore</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -111,12 +131,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     opacity: 0.4
   },
-  contract:{
-    ...theme.textTheme.labelMedium,
+  contractContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: context.paddingLow.padding,
     marginBottom: context.paddingLow.padding,
-    opacity:0.7,
-    textAlign:'center'
+  },
+  contract: {
+    ...theme.textTheme.labelMedium,
+    opacity: 0.6,
+    textAlign: 'center',
   },
   title: {
     marginTop: context.getDynamicHeight(-15),
@@ -144,4 +169,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PaywallView;
+export default PaywallView;
