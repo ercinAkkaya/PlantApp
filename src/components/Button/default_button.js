@@ -1,4 +1,3 @@
-// components/Button/CustomButton.js
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import context from '../../core/extension/context';
@@ -20,7 +19,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical:10
   },
   buttonText: {
     ...theme.textTheme.labelLarge,

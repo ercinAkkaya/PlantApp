@@ -60,18 +60,16 @@ const styles = StyleSheet.create({
   },
   descriptionText: {
     marginTop: context.getDynamicHeight(1),
-    marginEnd: context.getDynamicWidth(2),
+    marginEnd: context.getDynamicWidth(8),
     ...theme.textTheme.headlineMedium,
     color: theme.colors.secondary,
     opacity: 0.6,
   },
   image: {
-    marginTop: context.paddingMedium.padding,
-    height: context.getDynamicHeight(60),
+    height: context.getDynamicHeight(62),
     width: context.getDynamicWidth(85),
   },
   buttonContainer: {
-    marginTop: context.getDynamicHeight(2),
     width: context.getDynamicWidth(85),
     justifyContent: 'center',
     alignItems: 'center',

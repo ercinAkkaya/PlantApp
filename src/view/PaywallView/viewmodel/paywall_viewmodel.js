@@ -40,10 +40,10 @@ const usePaywallViewModel = () => {
       });
   };
 
-  const navigation = useNavigation(); // Step 2: Use the useNavigation hook
+  const navigation = useNavigation(); 
 
   const crossButtonOnTap = () => {
-    navigation.navigate('Home'); // Step 3: Call navigate on the navigation object
+    navigation.navigate('Home'); 
   }
 
   const handleSubscriptionSelect = (subscriptionType) => {

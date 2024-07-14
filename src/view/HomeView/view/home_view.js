@@ -8,6 +8,7 @@ import {
   Alert,
   ActivityIndicator,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import SearchBar from '../../../components/bar/search_bar';
 import PremiumCard from '../../../components/card/premium_card';
 import QuestionCard from '../../../components/card/question_card';
@@ -15,7 +16,7 @@ import CategoryCard from '../../../components/card/category_card';
 import context from '../../../core/extension/context';
 import BottomNavbar from '../../../components/bar/bottom_navbar';
 import theme from '../../../core/init/theme/theme';
-
+import { HomePageViewModel } from '../viewmodel/home_viewmodel';
 
 const API_URL_CATEGORY =
   'https://dummy-api-jtg6bessta-ey.a.run.app/getCategories';
@@ -23,6 +24,8 @@ const API_URL_QUESTIONS =
   'https://dummy-api-jtg6bessta-ey.a.run.app/getQuestions';
 
 const HomePageView = () => {
+  const navigation = useNavigation();
+  const viewModel = new HomePageViewModel(navigation.navigate);
   const [categories, setCategories] = useState([]);
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -83,7 +86,7 @@ const HomePageView = () => {
             style={[styles.backgroundImage, { right: 0 }]}
           />
         </View>
-        <PremiumCard />
+        <PremiumCard onPress={viewModel.premiumCardOnTap.bind(viewModel)} />
         <Text style={styles.bodyTitle}>Get Started</Text>
         <ScrollView
           horizontal
@@ -126,8 +129,9 @@ const HomePageView = () => {
 
 const styles = StyleSheet.create({
   smallTitle: {
+
+    ...theme.textTheme.labelLarge,
     color: '#000',
-    fontSize: 16,
     fontWeight: '400',
     textAlign: 'left',
     padding: context.paddingLow.padding,
@@ -180,7 +184,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: context.paddingLow.padding,
   },
   scrollContainer: {
-    flex: 10, 
+    flex: 10,
   },
   categoryScroll: {
     flexGrow: 1,

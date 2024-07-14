@@ -1,16 +1,13 @@
-// viewmodel/HomePageViewModel.js
-
 export class HomePageViewModel {
-    constructor(navigation) {
-      this.navigation = navigation; // Pass navigation object to ViewModel
-    }
-  
-    navigateToPaywall() {
-      this.navigation.navigate('Paywall'); // Navigate to Paywall screen
-    }
+  constructor(navigation) {
+    this.navigation = navigation; 
   }
-  
-  export const useHomePageViewModel = (navigation) => {
-    return new HomePageViewModel(navigation);
-  };
-  
+
+  premiumCardOnTap() {
+    this.navigation('Paywall');
+  }
+}
+
+export const useHomePageViewModel = (navigation) => {
+  return new HomePageViewModel(navigation);
+};

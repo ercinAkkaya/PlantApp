@@ -6,7 +6,6 @@ import SubscriptionCard from '../../../components/card/subscription_card';
 import context from '../../../core/extension/context';
 import theme from '../../../core/init/theme/theme';
 import usePaywallViewModel from '../viewmodel/paywall_viewmodel';
-import Toast from 'react-native-toast-message';
 
 const PaywallView = () => {
   const {
@@ -166,7 +165,7 @@ const styles = StyleSheet.create({
   },
   scroll: {
     flexGrow: 1,
-    paddingVertical: 8,
+    paddingVertical: context.paddingLow.padding,
   },
 });
 

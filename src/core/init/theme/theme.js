@@ -1,11 +1,10 @@
-// theme.js
 const theme = {
     colors: {
       primary: '#28ae6f',
       secondary: '#000000',
       onPrimary: '#F0F0F0',
       onSecondary: '#25201b',
-      background: '#ffffff',
+      background: '#FDFFFE',
       territary: '#0e2719',
       grey: '#2e3a35',
       greyDark: '#1c2922',

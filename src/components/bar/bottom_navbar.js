@@ -4,7 +4,7 @@ import context from '../../core/extension/context';
 import theme from '../../core/init/theme/theme'; 
 
 export default function BottomNavbar() {
-  const [selectedItem, setSelectedItem] = useState('');
+  const [selectedItem, setSelectedItem] = useState('Home');
 
   return (
     <View style={styles.navbar}>
@@ -110,17 +110,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     padding: context.paddingLow.padding,
-    paddingHorizontal: context.paddingMedium.padding,
+    paddingHorizontal: context.getDynamicWidth(5),
   },
   middleItem: {
     padding: context.paddingLow.padding,
-    width: context.getDynamicWidth(8),
+    width: context.getDynamicWidth(15),
     borderWidth: 5,
     borderColor: '#60c193',
     borderRadius: 50,
     backgroundColor: '#29ae6e',
-    marginBottom: 20,
-    marginTop: -20,
+    marginBottom: context.getDynamicHeight(5),
+    marginTop: context.getDynamicHeight(-4),
   },
   middleNavItem: {
     alignItems: 'center',

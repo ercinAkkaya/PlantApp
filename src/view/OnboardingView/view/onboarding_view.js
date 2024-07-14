@@ -8,6 +8,7 @@ import theme from '../../../core/init/theme/theme';
 import SecondOnboardingContent from '../../../components/onboarding/second_onboarding_content';
 import OnboardingViewModel from '../viewmodel/onboarding_viewmodel';
 
+
 const OnboardingView = () => {
   const navigation = useNavigation();
   const viewModel = new OnboardingViewModel(navigation.navigate);
@@ -45,7 +46,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: context.paddingMedium.padding,
-    backgroundColor: '#FFFFFF',
   },
   contentContainer: {
     flex: 1,
