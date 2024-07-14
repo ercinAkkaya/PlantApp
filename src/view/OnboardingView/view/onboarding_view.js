@@ -16,7 +16,6 @@ const OnboardingView = () => {
   useEffect(() => {
     viewModel.addListener(setStep);
     return () => {
-      // Clean up the listener when the component unmounts
       viewModel.listeners = viewModel.listeners.filter(listener => listener !== setStep);
     };
   }, [viewModel]);

@@ -15,13 +15,14 @@ const PaywallView = () => {
     privacyOnTap,
     restoreOnTap,
     handleSubscriptionSelect,
+    crossButtonOnTap,
   } = usePaywallViewModel();
 
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image source={require('../../../../assets/png/plant.png')} style={styles.image} />
-        <TouchableOpacity style={styles.crossContainer}>
+        <TouchableOpacity style={styles.crossContainer} onPress={crossButtonOnTap}> 
           <View style={styles.crossBackground}>
             <Image source={require('../../../../assets/png/cross.png')} style={styles.crossImage} />
           </View>

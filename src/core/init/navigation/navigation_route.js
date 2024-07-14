@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import GetStartedView from '../../../view/GetStartedView/view/get_started_view';
 import OnboardingView from '../../../view/OnboardingView/view/onboarding_view';
 import PaywallView from '../../../view/PaywallView/view/paywall_view';
+import HomeView from '../../../view/HomeView/view/home_view';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,10 @@ const Navigation = () => {
         <Stack.Screen
           name="Paywall"
           component={PaywallView}
+        />
+        <Stack.Screen
+          name="Home"
+          component={HomeView}
         />
       </Stack.Navigator>
     </NavigationContainer>

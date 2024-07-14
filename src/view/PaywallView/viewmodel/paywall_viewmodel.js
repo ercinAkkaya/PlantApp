@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Toast from 'react-native-toast-message';
+import { useNavigation } from '@react-navigation/native';
+
 
 
 const usePaywallViewModel = () => {
@@ -38,6 +40,12 @@ const usePaywallViewModel = () => {
       });
   };
 
+  const navigation = useNavigation(); // Step 2: Use the useNavigation hook
+
+  const crossButtonOnTap = () => {
+    navigation.navigate('Home'); // Step 3: Call navigate on the navigation object
+  }
+
   const handleSubscriptionSelect = (subscriptionType) => {
     setSelectedSubscription(subscriptionType);
   };
@@ -48,6 +56,7 @@ const usePaywallViewModel = () => {
     privacyOnTap,
     restoreOnTap,
     handleSubscriptionSelect,
+    crossButtonOnTap,
   };
 };
 

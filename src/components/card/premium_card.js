@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import context from '../../core/extension/context';
 
-const PremiumCard = () => {
+const PremiumCard = ({ onPress }) => {
   return (
-    <TouchableOpacity style={styles.card} onPress={() => alert('Card Tapped')}>
+    <TouchableOpacity style={styles.card} onPress={onPress}>
       <Image source={require('../../../assets/png/envelope.png')} style={styles.icon} />
       <View style={styles.textContainer}>
         <Text style={styles.title}>FREE Premium Available</Text>
