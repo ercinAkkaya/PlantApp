@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import context from '../../../core/extension/context';
 import theme from '../../../core/init/theme/theme';
 import DefaultButton from '../../../components/Button/default_button';
 import GetStartedViewModel from '../viewmodel/get_started_viewmodel';
-import Toast from 'react-native-toast-message';
 
-const GetStartedView = (navigation) => {
+const GetStartedView = () => {
+  const navigation = useNavigation();
   const viewModel = new GetStartedViewModel(navigation.navigate);
 
   return (

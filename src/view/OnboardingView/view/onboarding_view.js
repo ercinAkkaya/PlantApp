@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import context from '../../../core/extension/context';
 import FirstOnboardingContent from '../../../components/onboarding/first_onboarding_content';
 import DefaultButton from '../../../components/Button/default_button';
 import theme from '../../../core/init/theme/theme';
 import SecondOnboardingContent from '../../../components/onboarding/second_onboarding_content';
+import OnboardingViewModel from '../viewmodel/onboarding_viewmodel';
 
 const OnboardingView = () => {
-  const [step, setStep] = useState(0);
+  const navigation = useNavigation();
+  const viewModel = new OnboardingViewModel(navigation.navigate);
+  const [step, setStep] = useState(viewModel.step);
+
+  useEffect(() => {
+    viewModel.addListener(setStep);
+    return () => {
+      // Clean up the listener when the component unmounts
+      viewModel.listeners = viewModel.listeners.filter(listener => listener !== setStep);
+    };
+  }, [viewModel]);
 
   const handleContinue = () => {
-    setStep((prevStep) => prevStep + 1);
+    viewModel.handleContinue();
   };
 
   return (
@@ -24,7 +36,6 @@ const OnboardingView = () => {
         <View style={styles.indicatorContainer}>
           <View style={[styles.indicator, step === 0 && styles.activeIndicator]} />
           <View style={[styles.indicator, step === 1 && styles.activeIndicator]} />
-          <View style={styles.indicator} />
         </View>
       </View>
     </View>
@@ -35,6 +46,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: context.paddingMedium.padding,
+    backgroundColor: '#FFFFFF',
   },
   contentContainer: {
     flex: 1,

@@ -2,6 +2,10 @@ import Toast from 'react-native-toast-message';
 
 
 class GetStartedViewModel {
+  constructor(navigate) {
+    this.navigate = navigate;
+  }
+
   termOfUseOnTap() {
     Toast.show({
       type: 'info',
@@ -24,16 +28,9 @@ class GetStartedViewModel {
     });
   }
 
-  getStartedButtonOnTap() {
-    Toast.show({
-      type: 'info',
-      position: 'bottom',
-      text1: 'Get Started',
-      text2: 'You pressed the Get Started button.',
-      visibilityTime: 3000,
-      autoHide: true,
-    });
-  }
+  getStartedButtonOnTap = () => {
+    this.navigate('Onboarding');
+  };
 }
 
 export default GetStartedViewModel;

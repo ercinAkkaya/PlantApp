@@ -18,8 +18,8 @@ const Navigation = () => {
         }}
       >
         <Stack.Screen
-          name="Onboarding"
-          component={OnboardingView}
+          name="GetStarted"
+          component={GetStartedView}
         />
         <Stack.Screen
           name="Onboarding"

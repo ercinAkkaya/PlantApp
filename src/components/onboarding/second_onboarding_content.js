@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(246, 250, 255, 0.55)',
+    backgroundColor: 'rgba(246, 250, 255, 0.3)',
   },
   foregroundImage: {
     width: context.getDynamicWidth(90),
